@@ -239,10 +239,10 @@ h6,
     border-color: var(--primary);
 }
 
-.page-header {
+/* .page-header {
     background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2)), url(../img/carousel-1.jpg) center center no-repeat;
     background-size: cover;
-}
+} */
 
 .breadcrumb-item + .breadcrumb-item::before {
     color: rgba(255, 255, 255, .5);
@@ -323,15 +323,11 @@ h6,
 
 .facility-item:hover .facility-icon::before,
 .facility-item:hover .facility-text::before {
-    background: transparent;
-}
-
-.facility-item * {
-    transition: .5s;
+    background: rgba(255, 255, 255, .9);
 }
 
 .facility-item:hover * {
-    color: #FFFFFF !important;
+    color: initial !important;
 }
 
 
@@ -500,4 +496,20 @@ h6,
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+/* CSS styles for images */
+.img-fluid {
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.3s ease-in-out; /* Add smooth transition effect */
+}
+
+/* Hover effect */
+.img-fluid:hover {
+    transform: scale(1.05); /* Enlarge image on hover */
+}
+
+/* Margin for images */
+.col-md-4 {
+    margin-bottom: 20px;
 }
