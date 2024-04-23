@@ -38,6 +38,59 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+	 <style>
+        .chat-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+            flex-direction: column;
+        }
+
+        .chat-popup-header {
+            background-color: #ddd;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-popup-title {
+            font-weight: bold;
+        }
+
+        .chat-popup-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .chat-popup-body {
+            padding: 10px;
+            overflow-y: auto;
+            max-height: 200px;
+        }
+
+        .chat-popup-footer {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .chat-popup-footer input[type="text"] {
+            flex-grow: 1;
+            padding: 5px;
+        }
+
+        .chat-popup-footer button {
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -667,7 +720,8 @@
                                     </div>
                                 </form>
                                 <p></p>
-                                <p style="margin-left: 130px;" class="mb-4">or Call Us at <a href="080-4168 5124">080-4168 5124</a>.</p>
+                                <p style="margin-left: 130px;" class="mb-4">or Call Us at <a href="916366732999">+916366732999
+or  +918041685124</a>.</p>
                             </div>
                         </div>
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
@@ -775,7 +829,24 @@
             </div>
         </div> -->
         <!-- Testimonial End -->
+ <!-- Chat Popup -->
+        <div id="chat-popup" class="chat-popup">
+            <div class="chat-popup-header">
+                <span class="chat-popup-title">Chat with Us</span>
+                <button class="chat-popup-close" onclick="closeChatPopup()">×</button>
+            </div>
+            <iframe
+            src="https://www.chatbase.co/chatbot-iframe/bsLdEET_VWNgpYYCTG5gZ"
+            title="Chatbot"
+          
+            style="height:50%; min-height: 350px"
+            frameborder="0"
+            ></iframe>
+            
+        </div>
 
+
+        <!-- Chat Popup End -->
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -783,8 +854,8 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Get In Touch</h3>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>No. 105, 208, SFS, New Town Yelahanka, Bangalore 560 064 </p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>080-4168 5124   </p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>No.173/174, 208, SFS, New Town Yelahanka, Bangalore 560 064 </p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>916366732999 or +918041685124  </p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>www.mec.edu.in</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
@@ -869,7 +940,26 @@
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
+<script>
+        window.onload = function () {
+            openChatPopup(); // Open chat popup when the page finishes loading
+        }
 
+        function openChatPopup() {
+            document.getElementById("chat-popup").style.display = "block";
+        }
+
+        function closeChatPopup() {
+            document.getElementById("chat-popup").style.display = "none";
+        }
+
+        function sendMessage() {
+            var message = document.getElementById("chat-message").value;
+            // Send message logic here, e.g., display in chat-popup-body
+            console.log("Message sent:", message);
+            document.getElementById("chat-message").value = ""; // Clear input field after sending
+        }
+    </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
