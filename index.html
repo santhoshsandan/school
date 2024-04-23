@@ -92,6 +92,58 @@
             padding: 5px 10px;
             cursor: pointer;
         }
+         .enquiry-popup {
+            position: fixed;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0e3e3;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+            width: 500px;
+            padding: 20px;
+        }
+
+        .enquiry-popup-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .enquiry-popup-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .enquiry-popup-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .enquiry-popup-close:hover {
+            color: #333;
+        }
+
+        .enquiry-popup form {
+            margin-bottom: 0;
+        }
+
+        .enquiry-popup form .form-floating {
+            margin-bottom: 15px;
+        }
+
+        .enquiry-popup form .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .enquiry-popup form .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -849,6 +901,40 @@ or  +918041685124</a>.</p>
 
 
         <!-- Chat Popup End -->
+ <div id="enquiry-popup" class="enquiry-popup">
+            <div class="enquiry-popup-header">
+                <span class="enquiry-popup-title">Quick Enquiry</span>
+                <button class="enquiry-popup-close" onclick="closePopup()">×</button>
+            </div>
+            <form action="https://api.web3forms.com/submit" method="post">
+                <input type="hidden" name="access_key" value="51b9f702-79ec-4009-a81d-67fd32da166f">
+                <div class="row g-3">
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control border-0" name="name" id="name" placeholder="name">
+                            <label for="phone">Name</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control border-0" name="email" id="email" placeholder="email">
+                            <label for="phone">Email</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            <input type="text" class="form-control border-0" name="phone" id="phone" placeholder="Phone">
+                            <label for="phone">Phone</label>
+                        </div>
+                    </div>
+                   
+                   
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
 
         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -942,7 +1028,7 @@ or  +918041685124</a>.</p>
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
-<script>
+ <script>
         window.onload = function () {
             openChatPopup(); // Open chat popup when the page finishes loading
         }
@@ -953,6 +1039,9 @@ or  +918041685124</a>.</p>
 
         function closeChatPopup() {
             document.getElementById("chat-popup").style.display = "none";
+        }
+        function closePopup() {
+            document.getElementById("enquiry-popup").style.display = "none";
         }
 
         function sendMessage() {
