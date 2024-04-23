@@ -39,6 +39,26 @@
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
 	 <style>
+	.open-popup-button {
+            position: fixed;
+            
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 45%;
+            margin-bottom: 20px;
+            border: none ;
+          
+            cursor: pointer;
+        }
+
+        .open-popup-button:hover {
+            background-color: #0056b3;
+        }
+
         .chat-popup {
             position: fixed;
             bottom: 20px;
@@ -101,7 +121,7 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             z-index: 9999;
-            width: 500px;
+            width: auto;
             padding: 20px;
         }
 
@@ -898,7 +918,9 @@ or  +918041685124</a>.</p>
             ></iframe>
             
         </div>
-
+ <div> <button style="bottom: 0;" class="open-popup-button" onclick="openChatPopup()">
+            <i class="fas fa-user"></i>
+        </button></div>
 
         <!-- Chat Popup End -->
  <div id="enquiry-popup" class="enquiry-popup">
